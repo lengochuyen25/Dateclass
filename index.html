@@ -38,10 +38,18 @@
             this.year = year;
         }
 
+
         this.toString = function (day, month, year) {
-            this.day = day;
-            this.month = month;
-            this.year = year;
+            let d = day;
+            let m = month;
+            if (d < 10) {
+                d = '0' + day;
+            }
+            if (m < 10) {
+                m = '0' + month;
+            }
+            return (d + "/" + m + "/" + year);
+
         }
     };
     // Cho phương thức vào đối tượng.
@@ -65,8 +73,9 @@
     alert(date.getDay() + "/" + date.getMonth() + "/" + date.getYear());
 
 
-    date.toString(11, 12, 2019);
-    alert(date.getDay() + "/" + date.getMonth() + "/" + date.getYear());
+    alert(date.toString(1, 12, 2019));
+
+
 
 </script>
 </body>
